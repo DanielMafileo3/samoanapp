@@ -9,6 +9,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:rive/rive.dart';
 import 'package:samoanapp/screens/colorssa.dart';
 import 'package:samoanapp/screens/days.dart';
+import 'package:samoanapp/screens/family.dart';
 import 'package:samoanapp/screens/food.dart';
 import 'package:samoanapp/screens/numbers.dart';
 import 'package:samoanapp/screens/reusableWidgets/reusecontentcard.dart';
@@ -396,7 +397,7 @@ class _WordsState extends State<Words> {
                               //   height: 10,
                               // ),
                               ReuseContentCard(
-                                page: Numbers(),
+                                page: Family(),
                                 title: 'Family',
                                 icon: Icon(
                                   MdiIcons.humanMaleFemaleChild,

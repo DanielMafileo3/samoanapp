@@ -21,24 +21,6 @@ class _FoodState extends State<Food> {
   int _index = 0;
   late RiveAnimation r;
 
-  List<RiveAnimation> _aniList = [
-    RiveAnimation.asset(
-      "assets/animations/bread.riv",
-      fit: BoxFit.cover,
-    ),
-    RiveAnimation.asset(
-      "assets/animations/egg.riv",
-      fit: BoxFit.cover,
-    ),
-  ];
-
-  RiveAnimation getAnimation(int index) {
-    setState(() {
-      r = _aniList[index];
-    });
-    return r;
-  }
-
   @override
   Widget build(BuildContext context) {
     // RiveAnimation r = RiveAnimation.asset(
