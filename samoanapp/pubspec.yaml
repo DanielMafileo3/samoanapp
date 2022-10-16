@@ -36,11 +36,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   just_audio: ^0.9.21
   #fonticons
-  font_awesome_flutter: ^9.1.0
+  font_awesome_flutter: ^10.2.1
   #icons
   material_design_icons_flutter: ^5.0.6595
   #animations
-  rive: ^0.8.4
+  rive: ^0.9.1
   #GridViewAnimation
   flutter_staggered_animations: ^1.0.0
   #google-fonts
@@ -49,6 +49,9 @@ dependencies:
   #url_launcher: ^6.1.2
   #share-app
   #share_plus: ^4.0.4
+  http: ^0.13.4
+  html: ^0.15.0
+
 
 dev_dependencies:
   flutter_test:

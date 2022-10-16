@@ -153,7 +153,7 @@ class _WordsState extends State<Words> {
             SingleChildScrollView(
               physics: BouncingScrollPhysics(),
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+                padding: const EdgeInsets.all(0),
                 child: Center(
                   child: Column(
                     children: [
@@ -185,7 +185,7 @@ class _WordsState extends State<Words> {
                               fontWeight: FontWeight.normal,
                             ),
                             SizedBox(
-                              height: 30,
+                              height: 10,
                             ),
                           ],
                         ),
@@ -204,178 +204,194 @@ class _WordsState extends State<Words> {
                           SizedBox(
                             height: 0,
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              ReuseContentCard(
-                                page: ColorsSa(),
-                                title: 'Colors',
-                                icon: Icon(
-                                  MdiIcons.palette,
-                                  size: 45,
-                                  color: Colors.brown,
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                ReuseContentCard(
+                                  page: ColorsSa(),
+                                  title: 'Colors',
+                                  icon: Icon(
+                                    MdiIcons.palette,
+                                    size: 45,
+                                    color: Colors.brown,
+                                  ),
                                 ),
-                              ),
-                              InkWell(
-                                onTap: () {
-                                  showModalBottomSheet(
-                                      context: context,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.vertical(
-                                            top: Radius.circular(20)),
-                                      ),
-                                      builder: (context) {
-                                        return Padding(
-                                          padding: const EdgeInsets.all(20),
-                                          child: Center(
-                                            child: Column(
-                                              children: [
-                                                SizedBox(
-                                                  height: 100,
-                                                  width: 100,
-                                                  child: Image.asset(
-                                                      "assets/images/samoanlogo.png"),
-                                                ),
-                                                ReuseTitleText(
-                                                  text:
-                                                      "Thank you for downloading this app!",
-                                                  size: 30,
-                                                ),
-                                                SizedBox(
-                                                  height: 15,
-                                                ),
-                                                ReuseText(
-                                                  text: "Made by UTOL TECH",
-                                                  size: 18,
-                                                ),
-                                                SizedBox(
-                                                  height: 30,
-                                                ),
-                                                ElevatedButton(
-                                                  style:
-                                                      ElevatedButton.styleFrom(
-                                                    side: BorderSide(
-                                                        width: 2,
-                                                        color: Colors.white),
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              25),
+                                InkWell(
+                                  onTap: () {
+                                    showModalBottomSheet(
+                                        context: context,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.vertical(
+                                              top: Radius.circular(20)),
+                                        ),
+                                        builder: (context) {
+                                          return Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 10),
+                                            child: Center(
+                                              child: SingleChildScrollView(
+                                                scrollDirection: Axis.vertical,
+                                                child: Column(
+                                                  children: [
+                                                    SizedBox(
+                                                      height: 10,
                                                     ),
-                                                    fixedSize: Size(200, 50),
-                                                  ),
-                                                  onPressed: () {
-                                                    // Share.share(
-                                                    //     'https://play.google.com/store/apps/details?id=utoltechnologies.hymnappstt');
-                                                  },
-                                                  child: Text("Share"),
-                                                ),
-                                                SizedBox(
-                                                  height: 10,
-                                                ),
-                                                ElevatedButton(
-                                                  style:
-                                                      ElevatedButton.styleFrom(
-                                                    side: BorderSide(
-                                                        width: 2,
-                                                        color: Colors.white),
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              25),
+                                                    SizedBox(
+                                                      height: 100,
+                                                      width: 100,
+                                                      child: Image.asset(
+                                                          "assets/images/samoanlogo.png"),
                                                     ),
-                                                    fixedSize: Size(200, 50),
-                                                  ),
-                                                  onPressed: () {},
-                                                  child: Text("Feedback"),
-                                                ),
-                                                SizedBox(
-                                                  height: 10,
-                                                ),
-                                                ElevatedButton(
-                                                  style:
-                                                      ElevatedButton.styleFrom(
-                                                    side: BorderSide(
-                                                        width: 2,
-                                                        color: Colors.white),
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              25),
+                                                    ReuseTitleText(
+                                                      text:
+                                                          "Thank you for downloading this app!",
+                                                      size: 30,
                                                     ),
-                                                    fixedSize: Size(200, 50),
-                                                  ),
-                                                  onPressed: () {
-                                                    // Navigator.of(context).pop();
-                                                    // showAlertDialog(context);
-                                                  },
-                                                  child: Text("Contact"),
+                                                    SizedBox(
+                                                      height: 15,
+                                                    ),
+                                                    ReuseText(
+                                                      text: "Made by UTOL TECH",
+                                                      size: 18,
+                                                    ),
+                                                    SizedBox(
+                                                      height: 30,
+                                                    ),
+                                                    ElevatedButton(
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                        side: BorderSide(
+                                                            width: 2,
+                                                            color:
+                                                                Colors.white),
+                                                        shape:
+                                                            RoundedRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(25),
+                                                        ),
+                                                        fixedSize:
+                                                            Size(200, 50),
+                                                      ),
+                                                      onPressed: () {
+                                                        // Share.share(
+                                                        //     'https://play.google.com/store/apps/details?id=utoltechnologies.hymnappstt');
+                                                      },
+                                                      child: Text("Share"),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 10,
+                                                    ),
+                                                    ElevatedButton(
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                        side: BorderSide(
+                                                            width: 2,
+                                                            color:
+                                                                Colors.white),
+                                                        shape:
+                                                            RoundedRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(25),
+                                                        ),
+                                                        fixedSize:
+                                                            Size(200, 50),
+                                                      ),
+                                                      onPressed: () {},
+                                                      child: Text("Feedback"),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 10,
+                                                    ),
+                                                    ElevatedButton(
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                        side: BorderSide(
+                                                            width: 2,
+                                                            color:
+                                                                Colors.white),
+                                                        shape:
+                                                            RoundedRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(25),
+                                                        ),
+                                                        fixedSize:
+                                                            Size(200, 50),
+                                                      ),
+                                                      onPressed: () {
+                                                        // Navigator.of(context).pop();
+                                                        // showAlertDialog(context);
+                                                      },
+                                                      child: Text("Contact"),
+                                                    ),
+                                                  ],
                                                 ),
-                                              ],
+                                              ),
                                             ),
-                                          ),
-                                        );
-                                      });
-                                },
-                                child: SizedBox(
-                                  height: 100,
-                                  width: 100,
-                                  child: Image.asset(
-                                      "assets/images/samoanlogo.png"),
+                                          );
+                                        });
+                                  },
+                                  child: SizedBox(
+                                    height: 100,
+                                    width: 100,
+                                    child: Image.asset(
+                                        "assets/images/samoanlogo.png"),
+                                  ),
                                 ),
-                              ),
 
-                              // InkWell(
-                              //   onTap: () {},
-                              //   child: Column(
-                              //     children: [
-                              //       SizedBox(
-                              //         height: 120,
-                              //         width: 120,
-                              //         child: Card(
-                              //           //color: Colors.grey.shade200.withOpacity(0.5),
-                              //           elevation: 5,
-                              //           shape: CircleBorder(
-                              //             side: BorderSide(
-                              //                 color: Colors.brown, width: 8),
-                              //           ),
-                              //           child: Image.asset(
-                              //               "assets/images/samoanlogo.png"),
-                              //           //RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-                              //         ),
-                              //       ),
-                              //       SizedBox(
-                              //         height: 10,
-                              //       ),
-                              //       ReuseText(
-                              //         text: "",
-                              //         size: 20,
-                              //         fontWeight: FontWeight.bold,
-                              //         color: Color.fromARGB(255, 255, 255, 255),
-                              //       ),
-                              //       SizedBox(
-                              //         height: 5,
-                              //       ),
-                              //     ],
-                              //   ),
-                              // ),
-                              // SizedBox(
-                              //   height: 10,
-                              // ),
-                              ReuseContentCard(
-                                page: Days(),
-                                title: 'Days',
-                                icon: Icon(
-                                  MdiIcons.calendarMonth,
-                                  size: 45,
-                                  color: Colors.brown,
+                                // InkWell(
+                                //   onTap: () {},
+                                //   child: Column(
+                                //     children: [
+                                //       SizedBox(
+                                //         height: 120,
+                                //         width: 120,
+                                //         child: Card(
+                                //           //color: Colors.grey.shade200.withOpacity(0.5),
+                                //           elevation: 5,
+                                //           shape: CircleBorder(
+                                //             side: BorderSide(
+                                //                 color: Colors.brown, width: 8),
+                                //           ),
+                                //           child: Image.asset(
+                                //               "assets/images/samoanlogo.png"),
+                                //           //RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                                //         ),
+                                //       ),
+                                //       SizedBox(
+                                //         height: 10,
+                                //       ),
+                                //       ReuseText(
+                                //         text: "",
+                                //         size: 20,
+                                //         fontWeight: FontWeight.bold,
+                                //         color: Color.fromARGB(255, 255, 255, 255),
+                                //       ),
+                                //       SizedBox(
+                                //         height: 5,
+                                //       ),
+                                //     ],
+                                //   ),
+                                // ),
+                                // SizedBox(
+                                //   height: 10,
+                                // ),
+                                ReuseContentCard(
+                                  page: Days(),
+                                  title: 'Days',
+                                  icon: Icon(
+                                    MdiIcons.calendarMonth,
+                                    size: 45,
+                                    color: Colors.brown,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                           SizedBox(
                             height: 20,
