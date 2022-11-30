@@ -66,10 +66,10 @@ class _ColorsSaState extends State<ColorsSa> {
   bool islight(int index) {
     if (_colorNames[index].contains("Samasama") ||
         _colorNames[index].contains("Pa'e Pa'e")) {
-      print('true');
+      // print('true');
       isLightColor = true;
     } else {
-      print('false');
+      // print('false');
       isLightColor = false;
     }
 
@@ -92,17 +92,29 @@ class _ColorsSaState extends State<ColorsSa> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 147, 3, 157),
+        backgroundColor: Color(0xFF93039D),
         centerTitle: true,
-        title: Text("Samoa"),
+        title: Column(
+          children: [
+            Text("Samoa"),
+            ReuseText(
+              text: 'Swipe up',
+              size: 20,
+              fontWeight: FontWeight.normal,
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
+          ],
+        ),
         leading: InkWell(
             onTap: () => Navigator.pop(context),
-            child: Icon(MdiIcons.arrowLeft)),
+            child: Icon(
+              Icons.arrow_back_ios_new,
+            )),
       ),
       body: PageView.builder(
         scrollDirection: Axis.vertical,
         onPageChanged: (index) {
-          print("Page ${index + 1}");
+          // print("Page ${index + 1}");
         },
         physics: BouncingScrollPhysics(),
         itemCount: _colorNames.length,

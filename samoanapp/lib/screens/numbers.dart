@@ -53,7 +53,9 @@ class _NumbersState extends State<Numbers> {
         title: Text("Samoa"),
         leading: InkWell(
             onTap: () => Navigator.pop(context),
-            child: Icon(MdiIcons.arrowLeft)),
+            child: Icon(
+              Icons.arrow_back_ios_new,
+            )),
       ),
       body: Container(
         //color: Color.fromARGB(255, 73, 0, 79),

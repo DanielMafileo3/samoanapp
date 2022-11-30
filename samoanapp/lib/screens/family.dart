@@ -43,7 +43,9 @@ class _FamilyState extends State<Family> {
           title: Text("Samoa"),
           leading: InkWell(
               onTap: () => Navigator.pop(context),
-              child: Icon(MdiIcons.arrowLeft)),
+              child: Icon(
+                Icons.arrow_back_ios_new,
+              )),
         ),
         body: Stack(
           children: [
@@ -62,6 +64,15 @@ class _FamilyState extends State<Family> {
                       text: "Family",
                       size: 40,
                       color: Colors.white,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    ReuseText(
+                      text: 'is',
+                      size: 20,
+                      fontWeight: FontWeight.normal,
+                      color: Color.fromARGB(255, 236, 109, 255),
                     ),
                     Center(
                       child: SizedBox(
@@ -101,6 +112,15 @@ class _FamilyState extends State<Family> {
                       size: 40,
                       color: Colors.white,
                     ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    ReuseText(
+                      text: 'is',
+                      size: 20,
+                      fontWeight: FontWeight.normal,
+                      color: Color.fromARGB(255, 236, 109, 255),
+                    ),
                     Center(
                       child: SizedBox(
                         height: 400,
@@ -138,6 +158,15 @@ class _FamilyState extends State<Family> {
                       text: "Mum",
                       size: 40,
                       color: Colors.white,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    ReuseText(
+                      text: 'is',
+                      size: 20,
+                      fontWeight: FontWeight.normal,
+                      color: Color.fromARGB(255, 236, 109, 255),
                     ),
                     Center(
                       child: SizedBox(
@@ -177,6 +206,15 @@ class _FamilyState extends State<Family> {
                       size: 40,
                       color: Colors.white,
                     ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    ReuseText(
+                      text: 'is',
+                      size: 20,
+                      fontWeight: FontWeight.normal,
+                      color: Color.fromARGB(255, 236, 109, 255),
+                    ),
                     Center(
                       child: SizedBox(
                         height: 400,
@@ -214,6 +252,15 @@ class _FamilyState extends State<Family> {
                       text: "Sister",
                       size: 40,
                       color: Colors.white,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    ReuseText(
+                      text: 'is',
+                      size: 20,
+                      fontWeight: FontWeight.normal,
+                      color: Color.fromARGB(255, 236, 109, 255),
                     ),
                     Center(
                       child: SizedBox(

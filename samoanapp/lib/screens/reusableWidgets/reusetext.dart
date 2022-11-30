@@ -8,9 +8,15 @@ class ReuseText extends StatelessWidget {
   final double? size;
   final FontWeight? fontWeight;
   final Color? color;
+  final double? spacing;
 
   const ReuseText(
-      {Key? key, required this.text, this.size, this.fontWeight, this.color})
+      {Key? key,
+      required this.text,
+      this.size,
+      this.fontWeight,
+      this.color,
+      this.spacing})
       : super(key: key);
 
   @override
@@ -31,6 +37,7 @@ class ReuseText extends StatelessWidget {
           fontSize: size,
           fontWeight: fontWeight,
           color: color,
+          letterSpacing: spacing,
         ),
       ),
     );

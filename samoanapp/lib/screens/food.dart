@@ -35,8 +35,11 @@ class _FoodState extends State<Food> {
         centerTitle: true,
         title: Text("Samoa"),
         leading: InkWell(
-            onTap: () => Navigator.pop(context),
-            child: Icon(MdiIcons.arrowLeft)),
+          onTap: () => Navigator.pop(context),
+          child: Icon(
+            Icons.arrow_back_ios_new,
+          ),
+        ),
       ),
       body: Container(
         //color: Color.fromARGB(255, 73, 0, 79),
@@ -66,7 +69,7 @@ class _FoodState extends State<Food> {
                       height: 10,
                     ),
                     ReuseText(
-                      text: 'Press the buttons to listen to the numbers.',
+                      text: 'Here are some foods in Samoan',
                       size: 18,
                       fontWeight: FontWeight.normal,
                       color: Color.fromARGB(255, 236, 109, 255),
@@ -90,11 +93,23 @@ class _FoodState extends State<Food> {
                         SizedBox(
                           width: 20,
                         ),
-                        ReuseText(
-                          text: "Falaoa",
-                          size: 30,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
+                        Column(
+                          children: [
+                            ReuseText(
+                              text: "Bread",
+                              size: 18,
+                              color: Color.fromARGB(255, 255, 255, 255)
+                                  .withOpacity(0.8),
+                              fontWeight: FontWeight.bold,
+                            ),
+                            ReuseText(
+                              text: "Falaoa",
+                              size: 30,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              spacing: 1,
+                            ),
+                          ],
                         )
                       ],
                     ),
@@ -111,11 +126,23 @@ class _FoodState extends State<Food> {
                         SizedBox(
                           width: 20,
                         ),
-                        ReuseText(
-                          text: "Fuamoa",
-                          size: 30,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
+                        Column(
+                          children: [
+                            ReuseText(
+                              text: "Egg",
+                              size: 18,
+                              color: Color.fromARGB(255, 255, 255, 255)
+                                  .withOpacity(0.8),
+                              fontWeight: FontWeight.bold,
+                            ),
+                            ReuseText(
+                              text: "Fuamoa",
+                              size: 30,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              spacing: 1,
+                            ),
+                          ],
                         )
                       ],
                     ),
@@ -132,11 +159,23 @@ class _FoodState extends State<Food> {
                         SizedBox(
                           width: 20,
                         ),
-                        ReuseText(
-                          text: "I'a",
-                          size: 30,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
+                        Column(
+                          children: [
+                            ReuseText(
+                              text: "Fish",
+                              size: 18,
+                              color: Color.fromARGB(255, 255, 255, 255)
+                                  .withOpacity(0.8),
+                              fontWeight: FontWeight.bold,
+                            ),
+                            ReuseText(
+                              text: "I'a",
+                              size: 30,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              spacing: 1,
+                            ),
+                          ],
                         )
                       ],
                     ),
@@ -153,11 +192,23 @@ class _FoodState extends State<Food> {
                         SizedBox(
                           width: 20,
                         ),
-                        ReuseText(
-                          text: "Susu",
-                          size: 30,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
+                        Column(
+                          children: [
+                            ReuseText(
+                              text: "Milk",
+                              size: 18,
+                              color: Color.fromARGB(255, 255, 255, 255)
+                                  .withOpacity(0.8),
+                              fontWeight: FontWeight.bold,
+                            ),
+                            ReuseText(
+                              text: "Susu",
+                              size: 30,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              spacing: 1,
+                            ),
+                          ],
                         )
                       ],
                     ),
@@ -174,11 +225,23 @@ class _FoodState extends State<Food> {
                         SizedBox(
                           width: 20,
                         ),
-                        ReuseText(
-                          text: "Pisupo",
-                          size: 30,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
+                        Column(
+                          children: [
+                            ReuseText(
+                              text: "Cornbeef",
+                              size: 18,
+                              color: Color.fromARGB(255, 255, 255, 255)
+                                  .withOpacity(0.8),
+                              fontWeight: FontWeight.bold,
+                            ),
+                            ReuseText(
+                              text: "Pisupo",
+                              size: 30,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              spacing: 1,
+                            ),
+                          ],
                         )
                       ],
                     ),
@@ -195,11 +258,23 @@ class _FoodState extends State<Food> {
                         SizedBox(
                           width: 20,
                         ),
-                        ReuseText(
-                          text: "Masima",
-                          size: 30,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
+                        Column(
+                          children: [
+                            ReuseText(
+                              text: "Salt",
+                              size: 18,
+                              color: Color.fromARGB(255, 255, 255, 255)
+                                  .withOpacity(0.8),
+                              fontWeight: FontWeight.bold,
+                            ),
+                            ReuseText(
+                              text: "Masima",
+                              size: 30,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              spacing: 1,
+                            ),
+                          ],
                         )
                       ],
                     ),

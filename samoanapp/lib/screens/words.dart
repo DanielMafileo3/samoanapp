@@ -27,9 +27,14 @@ class _WordsState extends State<Words> {
   showAlertDialog(BuildContext? context) {
     // Create button
     Widget okButton = ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25),
+        ),
+      ),
       child: Text(
         "OK",
-        style: TextStyle(color: Colors.orange[900]),
+        style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
       ),
       onPressed: () {
         Navigator.pop(context!);
@@ -58,33 +63,30 @@ class _WordsState extends State<Words> {
     AlertDialog alert = AlertDialog(
       title: Text("Samoan Language App"),
       content: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(50),
+        ),
         child: RichText(
           text: TextSpan(children: [
             TextSpan(
-                text:
-                    'Malo aupito kainga.\n\nKapau oku iai ha tokoni ke toe fakalakalaka ange ae meani pea kapau oku iai ha launga kataki fetutaki mai:\n\n',
+                text: 'UTOL TECH\n\nContact Us\n\n',
                 style: TextStyle(color: Colors.black)),
-            //TextSpan(text: 'Telefoni: ', style: TextStyle(color: Colors.black)),
+
+            // TextSpan(text: 'Email: ', style: TextStyle(color: Colors.black)),
             // TextSpan(
-            //     text: "+61421819757\n\n",
+            //     text: "utol.technology@gmail.com\n\n",
             //     style: TextStyle(color: Colors.orange[900]),
             //     recognizer: TapGestureRecognizer()
             //       ..onTap = () {
-            //         _launchNumber();
+            //         _launchEmail();
             //       }),
-            TextSpan(text: 'Email: ', style: TextStyle(color: Colors.black)),
-            TextSpan(
-                text: "utol.technology@gmail.com\n\n",
-                style: TextStyle(color: Colors.orange[900]),
-                recognizer: TapGestureRecognizer()
-                  ..onTap = () {
-                    _launchEmail();
-                  }),
             TextSpan(
                 text: 'Instagram: ', style: TextStyle(color: Colors.black)),
             TextSpan(
                 text: "@utol.tech\n\n",
-                style: TextStyle(color: Colors.orange[900]),
+                style: TextStyle(
+                  color: Colors.brown,
+                ),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
                     launch('https://www.instagram.com/utol_tech/');
@@ -92,20 +94,22 @@ class _WordsState extends State<Words> {
             TextSpan(text: 'Facebook: ', style: TextStyle(color: Colors.black)),
             TextSpan(
                 text: "Utol Tech\n\n",
-                style: TextStyle(color: Colors.orange[900]),
+                style: TextStyle(
+                  color: Colors.brown,
+                ),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
                     launch(
                         'https://www.facebook.com/utol.tech/?modal=admin_todo_tour');
                   }),
-            TextSpan(text: 'Website: ', style: TextStyle(color: Colors.black)),
-            TextSpan(
-                text: "mafileo.github.io\n\n",
-                style: TextStyle(color: Colors.orange[900]),
-                recognizer: TapGestureRecognizer()
-                  ..onTap = () {
-                    launch('https://mafileo.github.io/');
-                  }),
+            // TextSpan(text: 'Website: ', style: TextStyle(color: Colors.black)),
+            // TextSpan(
+            //     text: "mafileo.github.io\n\n",
+            //     style: TextStyle(color: Colors.orange[900]),
+            //     recognizer: TapGestureRecognizer()
+            //       ..onTap = () {
+            //         launch('https://mafileo.github.io/');
+            //       }),
           ]),
         ),
       ),
@@ -125,10 +129,12 @@ class _WordsState extends State<Words> {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
+        height: height,
+        width: width,
         child: Stack(
           children: [
             RiveAnimation.asset(
@@ -148,6 +154,20 @@ class _WordsState extends State<Words> {
               //   );
               // },
             ),
+            Positioned(
+              left: 0,
+              top: height * .75,
+              //bottom: 100,
+              child: SizedBox(
+                width: width,
+                //height: height * .6,
+                child: Image.asset(
+                  "assets/images/pattern-one.png",
+                  fit: BoxFit.cover,
+                  color: Colors.brown,
+                ),
+              ),
+            ),
             SingleChildScrollView(
               physics: BouncingScrollPhysics(),
               child: Padding(
@@ -162,6 +182,7 @@ class _WordsState extends State<Words> {
                         padding: const EdgeInsets.all(20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SizedBox(
                               height: 50,
@@ -246,42 +267,43 @@ class _WordsState extends State<Words> {
                                                     ReuseTitleText(
                                                       text:
                                                           "Thank you for downloading this app!",
-                                                      size: 30,
+                                                      size: 25,
                                                     ),
                                                     SizedBox(
                                                       height: 15,
                                                     ),
                                                     ReuseText(
-                                                      text: "Made by UTOL TECH",
+                                                      text: "UTOL TECH",
                                                       size: 18,
+                                                      spacing: 1,
                                                     ),
+                                                    // SizedBox(
+                                                    //   height: 30,
+                                                    // ),
+                                                    // ElevatedButton(
+                                                    //   style: ElevatedButton
+                                                    //       .styleFrom(
+                                                    //     side: BorderSide(
+                                                    //         width: 2,
+                                                    //         color:
+                                                    //             Colors.white),
+                                                    //     shape:
+                                                    //         RoundedRectangleBorder(
+                                                    //       borderRadius:
+                                                    //           BorderRadius
+                                                    //               .circular(25),
+                                                    //     ),
+                                                    //     fixedSize:
+                                                    //         Size(200, 50),
+                                                    //   ),
+                                                    //   onPressed: () {
+                                                    //     // Share.share(
+                                                    //     //     'https://play.google.com/store/apps/details?id=utoltechnologies.hymnappstt');
+                                                    //   },
+                                                    //   child: Text("Share"),
+                                                    // ),
                                                     SizedBox(
                                                       height: 30,
-                                                    ),
-                                                    ElevatedButton(
-                                                      style: ElevatedButton
-                                                          .styleFrom(
-                                                        side: BorderSide(
-                                                            width: 2,
-                                                            color:
-                                                                Colors.white),
-                                                        shape:
-                                                            RoundedRectangleBorder(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(25),
-                                                        ),
-                                                        fixedSize:
-                                                            Size(200, 50),
-                                                      ),
-                                                      onPressed: () {
-                                                        // Share.share(
-                                                        //     'https://play.google.com/store/apps/details?id=utoltechnologies.hymnappstt');
-                                                      },
-                                                      child: Text("Share"),
-                                                    ),
-                                                    SizedBox(
-                                                      height: 10,
                                                     ),
                                                     ElevatedButton(
                                                       style: ElevatedButton
@@ -323,7 +345,8 @@ class _WordsState extends State<Words> {
                                                       ),
                                                       onPressed: () {
                                                         // Navigator.of(context).pop();
-                                                        // showAlertDialog(context);
+                                                        showAlertDialog(
+                                                            context);
                                                       },
                                                       child: Text("Contact"),
                                                     ),

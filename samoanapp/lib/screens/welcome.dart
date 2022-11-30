@@ -5,6 +5,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:rive/rive.dart';
 import 'package:samoanapp/screens/home.dart';
+import 'package:samoanapp/screens/reusableWidgets/reusetext.dart';
 import 'package:samoanapp/screens/reusableWidgets/reusetitletext.dart';
 import 'package:samoanapp/screens/words.dart';
 
@@ -13,6 +14,8 @@ class Welccome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Container(
         color: Color.fromARGB(255, 255, 7, 230),
@@ -22,6 +25,20 @@ class Welccome extends StatelessWidget {
           children: [
             RiveAnimation.asset("assets/animations/welcome_screen.riv",
                 fit: BoxFit.cover),
+            Positioned(
+              left: 0,
+              top: height * .75,
+              //bottom: 100,
+              child: SizedBox(
+                width: width,
+                //height: height * .6,
+                child: Image.asset(
+                  "assets/images/pattern-one.png",
+                  fit: BoxFit.cover,
+                  color: Colors.brown,
+                ),
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(20),
               child: Center(
@@ -35,6 +52,17 @@ class Welccome extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                           letterSpacing: 2),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    ReuseText(
+                      text: 'UTOL TECH',
+                      size: 20,
+                      fontWeight: FontWeight.normal,
+                      color:
+                          Color.fromARGB(255, 255, 255, 255).withOpacity(0.8),
+                      spacing: 2,
                     ),
                     SizedBox(
                       height: 50,
