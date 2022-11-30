@@ -8,6 +8,7 @@ class ReuseText extends StatelessWidget {
   final double? size;
   final FontWeight? fontWeight;
   final Color? color;
+
   const ReuseText(
       {Key? key, required this.text, this.size, this.fontWeight, this.color})
       : super(key: key);

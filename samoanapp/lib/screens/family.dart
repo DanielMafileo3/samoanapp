@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:just_audio/just_audio.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:rive/rive.dart';
 import 'package:samoanapp/screens/reusableWidgets/reusetext.dart';
@@ -17,16 +18,20 @@ class Family extends StatefulWidget {
 class _FamilyState extends State<Family> {
   RiveAnimationController _controller = OneShotAnimation('mum');
   String ani = "";
+  AudioPlayer? player;
 
   @override
   void initState() {
     _controller = OneShotAnimation('dad');
+    player = AudioPlayer();
 
     super.initState();
   }
 
-  void _toggleAni() {
-    _controller = OneShotAnimation('dad');
+  @override
+  void dispose() {
+    player?.dispose();
+    super.dispose();
   }
 
   @override
@@ -55,7 +60,7 @@ class _FamilyState extends State<Family> {
                   children: [
                     ReuseText(
                       text: "Family",
-                      size: 30,
+                      size: 40,
                       color: Colors.white,
                     ),
                     Center(
@@ -77,7 +82,8 @@ class _FamilyState extends State<Family> {
                     ),
                     InkWell(
                       onTap: () {
-                        //print("daddd");
+                        player?.setAsset("assets/audio/family/aiga.mp3");
+                        player?.play();
                       },
                       child: Icon(
                         MdiIcons.volumeHigh,
@@ -92,7 +98,7 @@ class _FamilyState extends State<Family> {
                   children: [
                     ReuseText(
                       text: "Dad",
-                      size: 30,
+                      size: 40,
                       color: Colors.white,
                     ),
                     Center(
@@ -114,7 +120,8 @@ class _FamilyState extends State<Family> {
                     ),
                     InkWell(
                       onTap: () {
-                        //print("daddd");
+                        player?.setAsset("assets/audio/family/tama.mp3");
+                        player?.play();
                       },
                       child: Icon(
                         MdiIcons.volumeHigh,
@@ -129,7 +136,7 @@ class _FamilyState extends State<Family> {
                   children: [
                     ReuseText(
                       text: "Mum",
-                      size: 30,
+                      size: 40,
                       color: Colors.white,
                     ),
                     Center(
@@ -151,7 +158,8 @@ class _FamilyState extends State<Family> {
                     ),
                     InkWell(
                       onTap: () {
-                        //print("daddd");
+                        player?.setAsset("assets/audio/family/tina.mp3");
+                        player?.play();
                       },
                       child: Icon(
                         MdiIcons.volumeHigh,
@@ -166,7 +174,7 @@ class _FamilyState extends State<Family> {
                   children: [
                     ReuseText(
                       text: "Brother",
-                      size: 30,
+                      size: 40,
                       color: Colors.white,
                     ),
                     Center(
@@ -188,7 +196,8 @@ class _FamilyState extends State<Family> {
                     ),
                     InkWell(
                       onTap: () {
-                        //print("daddd");
+                        player?.setAsset("assets/audio/family/tuagane.mp3");
+                        player?.play();
                       },
                       child: Icon(
                         MdiIcons.volumeHigh,
@@ -203,7 +212,7 @@ class _FamilyState extends State<Family> {
                   children: [
                     ReuseText(
                       text: "Sister",
-                      size: 30,
+                      size: 40,
                       color: Colors.white,
                     ),
                     Center(
@@ -225,7 +234,8 @@ class _FamilyState extends State<Family> {
                     ),
                     InkWell(
                       onTap: () {
-                        //print("daddd");
+                        player?.setAsset("assets/audio/family/tuafafine.mp3");
+                        player?.play();
                       },
                       child: Icon(
                         MdiIcons.volumeHigh,

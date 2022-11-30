@@ -28,22 +28,28 @@ class Welccome extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    ReuseTitleText(
-                      text: "Samoan Language App",
-                      size: 30,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                    Text(
+                      "Samoan Language App",
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          letterSpacing: 2),
                     ),
                     SizedBox(
                       height: 50,
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        side: BorderSide(width: 2, color: Colors.white),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25),
+                        backgroundColor: Colors.white,
+                        side: BorderSide(
+                          width: 2,
+                          color: Colors.brown,
                         ),
-                        fixedSize: Size(200, 50),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        fixedSize: Size(200, 60),
                       ),
                       onPressed: () {
                         Navigator.push(
@@ -53,7 +59,14 @@ class Welccome extends StatelessWidget {
                           ),
                         );
                       },
-                      child: Text("Samoan Words"),
+                      child: Text(
+                        "Samoan Words",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.brown,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ],
                 ),

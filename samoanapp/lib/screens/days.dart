@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:just_audio/just_audio.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:rive/rive.dart';
 import 'package:samoanapp/screens/reusableWidgets/reusetext.dart';
@@ -32,7 +33,33 @@ class _DaysState extends State<Days> {
     "Aso Tofi",
     "Aso Faraile",
   ];
+
+  List<String> _audioDays = [
+    "aso_sa",
+    "aso_gafua",
+    "aso_lua",
+    "aso_lulu",
+    "aso_tofi",
+    "aso_faraile",
+  ];
+
   String _day = "";
+
+  AudioPlayer? player;
+
+  @override
+  void initState() {
+    player = AudioPlayer();
+
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    player?.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,7 +121,7 @@ class _DaysState extends State<Days> {
                           child: Center(
                               child: ReuseText(
                             text: _day,
-                            size: 30,
+                            size: 50,
                             color: Colors.white,
                           )),
                         ),
@@ -118,38 +145,51 @@ class _DaysState extends State<Days> {
                             return Padding(
                               padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                               child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                      //elevation: 8,
-                                      onPrimary:
-                                          Color.fromARGB(255, 236, 109, 255),
-                                      primary: Color.fromARGB(255, 147, 3, 157),
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(25))),
-                                  onPressed: () {
-                                    setState(() {
-                                      _day = _daysOfTheWeekSamoan[index];
-                                    });
-                                  },
-                                  child:
-                                      ReuseText(text: _daysOfTheWeek[index])),
+                                style: ElevatedButton.styleFrom(
+                                    //elevation: 8,
+                                    foregroundColor:
+                                        Color.fromARGB(255, 236, 109, 255),
+                                    backgroundColor:
+                                        Color.fromARGB(255, 147, 3, 157),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(25))),
+                                onPressed: () {
+                                  setState(() {
+                                    _day = _daysOfTheWeekSamoan[index];
+                                  });
+                                  player?.setAsset(
+                                      "assets/audio/days/${_audioDays[index]}.mp3");
+                                  player?.play();
+                                },
+                                child: ReuseText(
+                                  text: _daysOfTheWeek[index],
+                                  size: 18,
+                                ),
+                              ),
                             );
                           }),
                     ),
                     ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            //elevation: 8,
-                            onPrimary: Color.fromARGB(255, 236, 109, 255),
-                            primary: Color.fromARGB(255, 147, 3, 157),
-                            fixedSize: Size(110, 110),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25))),
-                        onPressed: () {
-                          setState(() {
-                            _day = "Aso To'ona'i";
-                          });
-                        },
-                        child: ReuseText(text: "Saturday")),
+                      style: ElevatedButton.styleFrom(
+                          //elevation: 8,
+                          foregroundColor: Color.fromARGB(255, 236, 109, 255),
+                          backgroundColor: Color.fromARGB(255, 147, 3, 157),
+                          fixedSize: Size(110, 110),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25))),
+                      onPressed: () {
+                        setState(() {
+                          _day = "Aso To'ona'i";
+                        });
+                        player?.setAsset("assets/audio/days/aso_toonai.mp3");
+                        player?.play();
+                      },
+                      child: ReuseText(
+                        text: "Saturday",
+                        size: 18,
+                      ),
+                    ),
 
                     // AnimationLimiter(
                     //     child: GridView.count(

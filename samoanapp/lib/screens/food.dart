@@ -94,6 +94,7 @@ class _FoodState extends State<Food> {
                           text: "Falaoa",
                           size: 30,
                           color: Colors.white,
+                          fontWeight: FontWeight.bold,
                         )
                       ],
                     ),
@@ -114,6 +115,7 @@ class _FoodState extends State<Food> {
                           text: "Fuamoa",
                           size: 30,
                           color: Colors.white,
+                          fontWeight: FontWeight.bold,
                         )
                       ],
                     ),
@@ -134,6 +136,7 @@ class _FoodState extends State<Food> {
                           text: "I'a",
                           size: 30,
                           color: Colors.white,
+                          fontWeight: FontWeight.bold,
                         )
                       ],
                     ),
@@ -154,6 +157,7 @@ class _FoodState extends State<Food> {
                           text: "Susu",
                           size: 30,
                           color: Colors.white,
+                          fontWeight: FontWeight.bold,
                         )
                       ],
                     ),
@@ -174,6 +178,7 @@ class _FoodState extends State<Food> {
                           text: "Pisupo",
                           size: 30,
                           color: Colors.white,
+                          fontWeight: FontWeight.bold,
                         )
                       ],
                     ),
@@ -194,6 +199,7 @@ class _FoodState extends State<Food> {
                           text: "Masima",
                           size: 30,
                           color: Colors.white,
+                          fontWeight: FontWeight.bold,
                         )
                       ],
                     ),

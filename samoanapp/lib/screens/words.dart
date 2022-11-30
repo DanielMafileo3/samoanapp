@@ -1,10 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, deprecated_member_use
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:rive/rive.dart';
 import 'package:samoanapp/screens/colorssa.dart';
@@ -15,6 +12,7 @@ import 'package:samoanapp/screens/numbers.dart';
 import 'package:samoanapp/screens/reusableWidgets/reusecontentcard.dart';
 import 'package:samoanapp/screens/reusableWidgets/reusetext.dart';
 import 'package:samoanapp/screens/reusableWidgets/reusetitletext.dart';
+import 'package:url_launcher/url_launcher.dart';
 // import 'package:share_plus/share_plus.dart';
 // import 'package:url_launcher/url_launcher.dart';
 
@@ -26,104 +24,104 @@ class Words extends StatefulWidget {
 }
 
 class _WordsState extends State<Words> {
-  // showAlertDialog(BuildContext? context) {
-  //   // Create button
-  //   Widget okButton = FlatButton(
-  //     child: Text(
-  //       "OK",
-  //       style: TextStyle(color: Colors.orange[900]),
-  //     ),
-  //     onPressed: () {
-  //       Navigator.pop(context!);
-  //     },
-  //   );
+  showAlertDialog(BuildContext? context) {
+    // Create button
+    Widget okButton = ElevatedButton(
+      child: Text(
+        "OK",
+        style: TextStyle(color: Colors.orange[900]),
+      ),
+      onPressed: () {
+        Navigator.pop(context!);
+      },
+    );
 
-  //   // _launchNumber() async {
-  //   //   const url = 'tel:+61421819757';
-  //   //   if (await canLaunch(url)) {
-  //   //     await launch(url);
-  //   //   } else {
-  //   //     throw 'Could not launch $url';
-  //   //   }
-  //   // }
+    // _launchNumber() async {
+    //   const url = 'tel:+61421819757';
+    //   if (await canLaunch(url)) {
+    //     await launch(url);
+    //   } else {
+    //     throw 'Could not launch $url';
+    //   }
+    // }
 
-  //   _launchEmail() async {
-  //     const url = 'mailto:utol.technology@gmail.com';
-  //     if (await canLaunch(url)) {
-  //       await launch(url);
-  //     } else {
-  //       throw 'Could not launch $url';
-  //     }
-  //   }
+    _launchEmail() async {
+      const url = 'mailto:utol.technology@gmail.com';
+      if (await canLaunch(url)) {
+        await launch(url);
+      } else {
+        throw 'Could not launch $url';
+      }
+    }
 
-  //   // Create AlertDialog
-  //   AlertDialog alert = AlertDialog(
-  //     title: Text("Samoan Language App"),
-  //     content: Container(
-  //       child: RichText(
-  //         text: TextSpan(children: [
-  //           TextSpan(
-  //               text:
-  //                   'Malo aupito kainga.\n\nKapau oku iai ha tokoni ke toe fakalakalaka ange ae meani pea kapau oku iai ha launga kataki fetutaki mai:\n\n',
-  //               style: TextStyle(color: Colors.black)),
-  //           //TextSpan(text: 'Telefoni: ', style: TextStyle(color: Colors.black)),
-  //           // TextSpan(
-  //           //     text: "+61421819757\n\n",
-  //           //     style: TextStyle(color: Colors.orange[900]),
-  //           //     recognizer: TapGestureRecognizer()
-  //           //       ..onTap = () {
-  //           //         _launchNumber();
-  //           //       }),
-  //           TextSpan(text: 'Email: ', style: TextStyle(color: Colors.black)),
-  //           TextSpan(
-  //               text: "utol.technology@gmail.com\n\n",
-  //               style: TextStyle(color: Colors.orange[900]),
-  //               recognizer: TapGestureRecognizer()
-  //                 ..onTap = () {
-  //                   _launchEmail();
-  //                 }),
-  //           TextSpan(
-  //               text: 'Instagram: ', style: TextStyle(color: Colors.black)),
-  //           TextSpan(
-  //               text: "@utol.tech\n\n",
-  //               style: TextStyle(color: Colors.orange[900]),
-  //               recognizer: TapGestureRecognizer()
-  //                 ..onTap = () {
-  //                   launch('https://www.instagram.com/utol_tech/');
-  //                 }),
-  //           TextSpan(text: 'Facebook: ', style: TextStyle(color: Colors.black)),
-  //           TextSpan(
-  //               text: "Utol Tech\n\n",
-  //               style: TextStyle(color: Colors.orange[900]),
-  //               recognizer: TapGestureRecognizer()
-  //                 ..onTap = () {
-  //                   launch(
-  //                       'https://www.facebook.com/utol.tech/?modal=admin_todo_tour');
-  //                 }),
-  //           TextSpan(text: 'Website: ', style: TextStyle(color: Colors.black)),
-  //           TextSpan(
-  //               text: "mafileo.github.io\n\n",
-  //               style: TextStyle(color: Colors.orange[900]),
-  //               recognizer: TapGestureRecognizer()
-  //                 ..onTap = () {
-  //                   launch('https://mafileo.github.io/');
-  //                 }),
-  //         ]),
-  //       ),
-  //     ),
-  //     actions: [
-  //       okButton,
-  //     ],
-  //   );
+    // Create AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text("Samoan Language App"),
+      content: Container(
+        child: RichText(
+          text: TextSpan(children: [
+            TextSpan(
+                text:
+                    'Malo aupito kainga.\n\nKapau oku iai ha tokoni ke toe fakalakalaka ange ae meani pea kapau oku iai ha launga kataki fetutaki mai:\n\n',
+                style: TextStyle(color: Colors.black)),
+            //TextSpan(text: 'Telefoni: ', style: TextStyle(color: Colors.black)),
+            // TextSpan(
+            //     text: "+61421819757\n\n",
+            //     style: TextStyle(color: Colors.orange[900]),
+            //     recognizer: TapGestureRecognizer()
+            //       ..onTap = () {
+            //         _launchNumber();
+            //       }),
+            TextSpan(text: 'Email: ', style: TextStyle(color: Colors.black)),
+            TextSpan(
+                text: "utol.technology@gmail.com\n\n",
+                style: TextStyle(color: Colors.orange[900]),
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () {
+                    _launchEmail();
+                  }),
+            TextSpan(
+                text: 'Instagram: ', style: TextStyle(color: Colors.black)),
+            TextSpan(
+                text: "@utol.tech\n\n",
+                style: TextStyle(color: Colors.orange[900]),
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () {
+                    launch('https://www.instagram.com/utol_tech/');
+                  }),
+            TextSpan(text: 'Facebook: ', style: TextStyle(color: Colors.black)),
+            TextSpan(
+                text: "Utol Tech\n\n",
+                style: TextStyle(color: Colors.orange[900]),
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () {
+                    launch(
+                        'https://www.facebook.com/utol.tech/?modal=admin_todo_tour');
+                  }),
+            TextSpan(text: 'Website: ', style: TextStyle(color: Colors.black)),
+            TextSpan(
+                text: "mafileo.github.io\n\n",
+                style: TextStyle(color: Colors.orange[900]),
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () {
+                    launch('https://mafileo.github.io/');
+                  }),
+          ]),
+        ),
+      ),
+      actions: [
+        okButton,
+      ],
+    );
 
-  //   // show the dialog
-  //   showDialog(
-  //     context: context!,
-  //     builder: (BuildContext context) {
-  //       return alert;
-  //     },
-  //   );
-  // }
+    // show the dialog
+    showDialog(
+      context: context!,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {

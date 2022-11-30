@@ -111,7 +111,6 @@ class _ColorsSaState extends State<ColorsSa> {
             onTap: () {
               player?.setAsset("assets/audio/colors/${_audioFiles[index]}.mp3");
               player?.play();
-              print("Tapped");
             },
             splashColor: Colors.blueAccent,
             child: Ink(
